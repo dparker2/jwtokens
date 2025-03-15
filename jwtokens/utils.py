@@ -1,5 +1,6 @@
 import base64
 
+
 def nopad_b64decode(data: str):
     missing_padding = len(data) % 4
     if missing_padding:
@@ -9,4 +10,4 @@ def nopad_b64decode(data: str):
 
 
 def nopad_b64encode(data: bytes):
-    return base64.urlsafe_b64encode(data).strip(b"=").decode("ascii")
+    return base64.urlsafe_b64encode(data).rstrip(b"=").decode("ascii")
